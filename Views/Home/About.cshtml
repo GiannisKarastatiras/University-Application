@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BootCampApp.ViewModels.EnrollmentDateGroup>
+
+@{
+    ViewBag.Title = "Statistics";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<h3>Student Statistics</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Enrollment Date</th>
+        <th>Students</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                @item.StudentCount
+            </td>
+        </tr>
+    }
+</table>
